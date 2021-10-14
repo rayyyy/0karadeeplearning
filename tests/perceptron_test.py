@@ -42,6 +42,18 @@ class Perceptron(unittest.TestCase):
             with self.subTest(x=x, y=y, result=result):
                 self.assertEqual(perceptron.OR(x, y), result)
 
+    def test_XOR(self):
+        patterns = [
+            (0, 0, 0),
+            (0, 1, 1),
+            (1, 0, 1),
+            (1, 1, 0),
+        ]
+
+        for x, y, result in patterns:
+            with self.subTest(x=x, y=y, result=result):
+                self.assertEqual(perceptron.XOR(x, y), result)
+
 
 if __name__ == '__main__':
     unittest.main()
