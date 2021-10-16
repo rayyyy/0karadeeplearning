@@ -25,3 +25,9 @@ def softmax(a: np.ndarray):
     y = exp_a / sum_exp_a
 
     return y
+
+
+def sigmoid_grad(x):
+    """5章で学ぶ関数。誤差逆伝播法を使う際に必要。
+    """
+    return (1.0 - sigmoid(x)) * sigmoid(x)
